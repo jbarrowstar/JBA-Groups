@@ -1,0 +1,157 @@
+.nav-container {
+  padding: 0px !important;
+  margin: 0px !important;
+  overflow: visible !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100% !important;
+}
+
+.nav-logo {
+  max-height: 80px;
+  width: auto;
+}
+
+.nav-link {
+  color: black !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  font-weight: 500 !important;
+  padding-right: 20px !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-link:hover {
+  color: #efb034ff !important;
+}
+
+/* Dropdown styles */
+.custom-dropdown::after {
+  display: none !important;
+}
+
+.dropdown-menu {
+  z-index: 1002 !important;
+  border: none !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+  border-radius: 8px !important;
+  padding: 8px 0 !important;
+  margin-top: 10px !important;
+}
+
+.dropdown-item {
+  color: black !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  font-weight: 500 !important;
+  padding: 10px 20px !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.dropdown-item:hover {
+  background-color: transparent !important;
+  color: #efb034ff !important;
+  padding-left: 25px !important;
+}
+
+.dropdown-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: #efb034ff;
+  transition: width 0.3s ease;
+  opacity: 0.1;
+}
+
+.dropdown-item:hover::before {
+  width: 4px;
+}
+
+.nav-btn {
+  font-size: 16px !important;
+  line-height: 22px !important;
+  font-weight: 500 !important;
+  color: white !important;
+  background: linear-gradient(135deg, #ffb347, #ff9505) !important;
+  border: none !important;
+  border-radius: 6px !important;
+  opacity: 1;
+  width: 120px !important;
+  padding: 10px !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  text-align: center !important;
+}
+
+.nav-btn:hover {
+  background: linear-gradient(135deg, #ffc371, #ff6f00) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 149, 5, 0.3);
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* Remove the site-visit-btn specific styles since we want both buttons to look the same */
+.site-visit-btn {
+  display: none;
+}
+
+.navbar-toggler {
+  color: #efb034ff !important;
+}
+
+.navbar-toggler-icon {
+  color: #efb034ff !important;
+}
+
+/* Add padding to body to prevent content from hiding under fixed header */
+body {
+  padding-top: 80px;
+}
+
+@media (max-width: 991px) {
+  .nav-link,
+  .nav-btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    text-align: left;
+  }
+
+  .nav-btn {
+    margin-left: 40px;
+    width: 150px !important;
+  }
+
+  .dropdown-menu {
+    position: static !important;
+    box-shadow: none !important;
+    padding-left: 20px !important;
+    border: none !important;
+    margin-top: 0 !important;
+  }
+
+  .dropdown-item {
+    padding: 8px 20px !important;
+  }
+
+  .dropdown-item:hover {
+    padding-left: 25px !important;
+  }
+}

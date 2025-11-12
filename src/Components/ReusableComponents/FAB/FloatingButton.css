@@ -1,0 +1,101 @@
+.floating-action-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    z-index: 9999;
+  }
+  
+  .floating-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+    margin-right: 0; /* Ensure no right margin */
+  }
+  
+  .floating-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+  
+  .floating-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .chat-button {
+    background-color: #4e67f7;
+  }
+  
+  .chat-button:hover {
+    background-color: #3b54e4;
+  }
+  
+  .plus-button {
+    background-color: #9c27b0;
+  }
+  
+  .plus-button:hover {
+    background-color: #8e24aa;
+  }
+  
+  .mail-button {
+    background-color: #f44336;
+  }
+  
+  .mail-button:hover {
+    background-color: #e53935;
+  }
+  
+  .phone-button {
+    background-color: #4caf50;
+  }
+  
+  .phone-button:hover {
+    background-color: #43a047;
+  }
+  
+  .main-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+  
+  .main-button:hover {
+    background-color: #43a047;
+    transform: scale(1.1);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .floating-action-container {
+      bottom: 80px;
+      right: 20px;
+    }
+
+    .floating-button,
+    .main-button {
+      width: 45px;
+      height: 45px;
+    }
+  }

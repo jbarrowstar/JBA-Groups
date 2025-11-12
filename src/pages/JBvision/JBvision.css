@@ -1,0 +1,263 @@
+/* GENERAL */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f8fb;
+  scroll-behavior: smooth;
+}
+
+.jb-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #0d3b66;
+  text-align: center;
+}
+
+/* HERO */
+.hero-section {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 34, 77, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  margin: 10px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #f8f9fa;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+/* PHASE SECTIONS */
+.phase-section {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  color: white;
+}
+
+.phase-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* TRANSPARENT SECTION */
+.transparent-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 60px 20px;
+  margin: 60px 0;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.transparent-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+/* AMENITIES */
+.amenities-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #eef4f8;
+}
+
+.amenities-slider {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.amenity-card {
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* ABOUT */
+.about-section {
+  padding: 60px 20px;
+  background: #fdfdfd;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-images img {
+  width: 220px;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+.download-btn {
+  background: #0d3b66;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+}
+
+/* GALLERY */
+.gallery-section {
+  background: #ffffff;
+  padding: 60px 20px;
+}
+
+.gallery-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+}
+
+.video-thumb {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+/* CHOOSE SECTION */
+.choose-section {
+  background: #eef1f6;
+  padding: 60px 20px;
+}
+
+.choose-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.choose-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* MILESTONES */
+.milestones-section {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.milestone-list {
+  list-style: none;
+  padding: 0;
+  color: #333;
+}
+
+/* WORKFLOW */
+.workflow-section {
+  padding: 60px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.workflow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.step {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 220px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+/* SCROLL TO TOP */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  padding: 12px;
+  border: none;
+  background: #0d3b66;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}

@@ -1,0 +1,258 @@
+.contactPage {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  min-height: 100vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.contactTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.contactTitle .highlight {
+  color: #25d366;
+}
+
+.contactInfoCard {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 16px;
+  padding: 24px 16px;
+  color: #fff;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  height: 100%;
+}
+
+.contactInfoCard:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.contactIcon {
+  font-size: 28px;
+  color: #25d366;
+  margin-bottom: 12px;
+}
+
+.contactCard {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  height: 100%;
+  padding: 2rem;
+}
+
+.contactCard h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.contact-control {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 12px 14px;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contact-control:focus {
+  border-color: #25d366;
+  box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.2);
+}
+
+.contact-control[type="date"],
+.contact-control[type="time"] {
+  color: #333;
+  background-color: #fff;
+}
+
+.contact-control[type="date"]::-webkit-calendar-picker-indicator,
+.contact-control[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
+  cursor: pointer;
+}
+
+.contact-control[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.contact-control[type="number"]::-webkit-outer-spin-button,
+.contact-control[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.contact-control[type="select"] {
+  color: #333;
+  background-color: #fff;
+}
+
+.contact-control[type="select"] option {
+  color: #333;
+  background-color: #fff;
+}
+
+.form-label {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.contactBtn {
+  background: linear-gradient(90deg, #e92764, #f75792) !important;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.contactBtn:hover {
+  transform: scale(1.05);
+}
+
+.map-responsive-small {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+}
+
+.contact-control[type="time"] {
+  color: #333;
+  background-color: #fff;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+.contact-control[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
+  cursor: pointer;
+  padding: 4px;
+  margin-right: 4px;
+}
+
+.contact-control[type="time"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(0.3);
+}
+
+.contact-control[type="time"]:focus {
+  color: #333 !important;
+  border-color: #25d366;
+  box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.2);
+}
+
+.time-input {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.time-input::-webkit-calendar-picker-indicator {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  filter: invert(0.5);
+  padding: 4px;
+  margin-right: 4px;
+  background-color: transparent;
+}
+
+.time-input::-webkit-calendar-picker-indicator:hover {
+  filter: invert(0.3);
+}
+
+.time-input:focus {
+  color: #333 !important;
+}
+
+.time-input:focus + div {
+  display: none;
+}
+
+.time-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.time-input-wrapper input[type="text"] {
+  background-color: #fff;
+  color: #333;
+  padding-right: 40px;
+  width: 100%;
+}
+
+.time-picker-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+.time-input-wrapper input[type="time"] {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.time-placeholder {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.time-input-wrapper input[type="time"]:not(:placeholder-shown) + .time-placeholder,
+.time-input-wrapper input[type="time"]:focus + .time-placeholder {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .contactCard {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .contact-control {
+    font-size: 16px;
+  }
+
+  .contactTitle {
+    font-size: 28px;
+  }
+
+  .contactCard h3 {
+    font-size: 1.25rem;
+  }
+}
