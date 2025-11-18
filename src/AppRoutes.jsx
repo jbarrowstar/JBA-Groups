@@ -14,6 +14,7 @@ import Sitemap from './pages/Sitemap/Sitemap';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Careers from './pages/Careers/Careers';
+import ArrowChild from './pages/arrow/ArrowChild';
 
 const AppRoutes = () => {
   return (
@@ -27,6 +28,7 @@ const AppRoutes = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/careers" element={<Careers />} />
+        <Route path="/arrow" element={<ArrowChild />} />
       
       {/* Guide routes */}
       <Route path="/guides" element={<UserGuides />} />
