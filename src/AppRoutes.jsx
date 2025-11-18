@@ -15,6 +15,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Careers from './pages/Careers/Careers';
 import ArrowChild from './pages/arrow/ArrowChild';
+import JBConX from './pages/JBConX/JBConX';
 
 const AppRoutes = () => {
   return (
@@ -29,6 +30,7 @@ const AppRoutes = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/careers" element={<Careers />} />
         <Route path="/arrow" element={<ArrowChild />} />
+        <Route path="/jbconx" element={<JBConX />} />
       
       {/* Guide routes */}
       <Route path="/guides" element={<UserGuides />} />
