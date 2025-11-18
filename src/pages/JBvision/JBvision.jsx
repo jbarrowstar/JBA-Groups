@@ -34,6 +34,12 @@ const heroContacts = [
   },
 ];
 
+const heroStats = [
+  { label: "Plots Delivered", value: "200+" },
+  { label: "Acres Under Development", value: "25" },
+  { label: "Families Onboarded", value: "320+" },
+];
+
 const pillars = [
   {
     title: "House for Everyone",
@@ -176,22 +182,38 @@ const JBvision = () => {
               <span>24/7 Security</span>
             </div>
             <div className="hero-contacts">
-              {heroContacts.map((contact) => (
-                <a
+                {heroContacts.map((contact, index) => (
+                  <motion.a
                   key={contact.value}
                   href={contact.href}
                   className="hero-chip"
                   target={contact.href.startsWith("http") ? "_blank" : "_self"}
                   rel="noreferrer"
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    transition={{ duration: 0.2, delay: index * 0.05 }}
                 >
                   {contact.icon}
                   <div>
                     <small>{contact.label}</small>
                     <strong>{contact.value}</strong>
                   </div>
-                </a>
+                  </motion.a>
               ))}
             </div>
+              <div className="hero-stats">
+                {heroStats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    className="hero-stat"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                  >
+                    <span>{stat.value}</span>
+                    <p>{stat.label}</p>
+                  </motion.div>
+                ))}
+              </div>
           </motion.div>
           <motion.div
             {...fadeUp}
@@ -212,6 +234,15 @@ const JBvision = () => {
             </ul>
           </motion.div>
         </div>
+          <motion.div
+            className="hero-floating-badge"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <span>Now Booking</span>
+            <p>Experience-centre walkthroughs available daily (Tue closed)</p>
+          </motion.div>
       </section>
 
       <section className="jbvision-vision">
