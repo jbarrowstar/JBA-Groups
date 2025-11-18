@@ -1,0 +1,361 @@
+.techsys-page {
+  font-family: "Poppins", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f7f7fb;
+  color: #0f111d;
+}
+
+.techsys-hero {
+  position: relative;
+  padding: clamp(3rem, 8vw, 5rem) 1.5rem 4rem;
+  background: radial-gradient(circle at 20% 20%, #ff5248 0%, #b80012 35%, #0b0f2a 90%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.techsys-container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+
+.techsys-hero::before,
+.techsys-hero::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+  filter: blur(12px);
+  animation: heroGlow 18s ease-in-out infinite;
+}
+
+.techsys-hero::before {
+  top: -180px;
+  right: -160px;
+}
+
+.techsys-hero::after {
+  bottom: -200px;
+  left: -80px;
+  animation-delay: 4s;
+}
+
+.techsys-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(6, 8, 22, 0.4), rgba(6, 8, 22, 0.85));
+}
+
+.techsys-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.techsys-hero-inner h1 {
+  font-size: clamp(2.3rem, 4.8vw, 4rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.techsys-hero-inner h1 span {
+  display: block;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  color: #ffd7d4;
+  margin-top: 0.4rem;
+}
+
+.techsys-hero-inner p {
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions a {
+  padding: 0.85rem 2.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
+.hero-actions a.primary {
+  background: linear-gradient(90deg, #ff4b4b, #ff0000);
+  border-color: transparent;
+  box-shadow: 0 15px 35px rgba(255, 0, 0, 0.35);
+}
+
+.hero-actions a.secondary {
+  background: transparent;
+}
+
+.hero-actions a:hover {
+  transform: translateY(-4px);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.hero-stat {
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.hero-stat span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.hero-stat p {
+  margin: 0.2rem 0 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.techsys-services,
+.techsys-about,
+.techsys-why,
+.techsys-contact {
+  padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 2rem;
+}
+
+.techsys-services .section-header,
+.techsys-why .section-header {
+  text-align: left;
+  margin: 0 0 2rem 0;
+}
+
+.section-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin-bottom: 0.4rem;
+  color: #0d1222;
+}
+
+.section-header p {
+  color: #5a6279;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #fe0000;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.service-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid #f3d6d6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 12px 32px rgba(254, 0, 0, 0.06);
+}
+
+.service-card svg {
+  font-size: 1.2rem;
+  color: #fe0000;
+}
+
+.service-card p {
+  margin: 0;
+  color: #0f111d;
+  font-weight: 500;
+}
+
+.techsys-about .about-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.about-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(7, 8, 25, 0.08);
+}
+
+.about-card h3 {
+  margin-bottom: 1rem;
+  color: #fe0000;
+}
+
+.about-card p {
+  color: #3b4156;
+}
+
+.about-card.outline {
+  border: 1px solid rgba(254, 0, 0, 0.2);
+}
+
+.about-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.about-card ul li strong {
+  display: block;
+  color: #0f111d;
+}
+
+.about-points {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.about-points span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: #fff3f3;
+  color: #b20000;
+}
+
+.techsys-why {
+  background: #0b1025;
+  color: #fff;
+}
+
+.why-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.why-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.why-card svg {
+  font-size: 1.3rem;
+  color: #ffb9b9;
+  margin-bottom: 0.6rem;
+}
+
+.why-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.techsys-contact .contact-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 70px rgba(7, 8, 25, 0.15);
+  border-top: 8px solid #fe0000;
+}
+
+.techsys-contact .contact-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.techsys-contact .contact-grid a {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #f1c7c7;
+  background: #fff5f5;
+}
+
+.techsys-contact .contact-grid .icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #ff4b4b, #fe0000);
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+@keyframes heroGlow {
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+  .about-points {
+    flex-direction: column;
+  }
+}
