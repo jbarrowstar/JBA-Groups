@@ -18,6 +18,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import "./JBvision.css";
+import heroLogo from "../../Assets/HeroLogo.png";
 
 const heroContacts = [
   {
@@ -166,6 +167,14 @@ const JBvision = () => {
             transition={{ duration: 0.6 }}
             className="hero-copy"
           >
+            <motion.img
+              src={heroLogo}
+              alt="JB Vision logo"
+              className="jbvision-hero-logo"
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            />
             <p className="eyebrow">Child Brand Spotlight</p>
             <h1>
               JB Vision

@@ -10,6 +10,7 @@ import {
   FaEnvelopeOpenText,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import heroLogo from "../../Assets/HeroLogo.png";
 import "./ArrowChild.css";
 
 const specialties = [
@@ -118,6 +119,14 @@ const ArrowChild = () => {
             transition={{ duration: 0.7 }}
             className="hero-text"
           >
+            <motion.img
+              src={heroLogo}
+              alt="Arrow Engineering logo"
+              className="arrow-hero-logo"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            />
             <p className="eyebrow">Child Brand Spotlight</p>
             <h1>
               ARROW Engineering &amp; Management Pte Ltd
