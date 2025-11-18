@@ -51,6 +51,14 @@
   z-index: 1;
 }
 
+.hero-logo {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 1rem;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+}
+
 .hero-pill {
   display: inline-flex;
   align-items: center;
@@ -117,6 +125,17 @@
 .primary-btn:hover,
 .ghost-btn:hover {
   transform: translateY(-4px);
+}
+
+.hero-floating-chip {
+  margin: 1.5rem auto 1rem;
+  width: fit-content;
+  padding: 0.65rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.95rem;
+  backdrop-filter: blur(12px);
 }
 
 .hero-stats {

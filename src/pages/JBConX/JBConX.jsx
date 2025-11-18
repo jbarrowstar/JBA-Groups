@@ -15,6 +15,7 @@ import {
   FaGooglePlay,
   FaApple,
 } from "react-icons/fa";
+import heroLogo from "../../Assets/HeroLogo.png";
 import "./JBConX.css";
 
 const heroStats = [
@@ -136,6 +137,14 @@ const JBConX = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <motion.img
+            src={heroLogo}
+            alt="JBConX logo"
+            className="hero-logo"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          />
           <span className="hero-pill">JBConX Pvt Ltd • Digital Construction Suite</span>
           <h1>
             Click, Connect, Construct.
@@ -153,6 +162,13 @@ const JBConX = () => {
               Book a Demo
             </a>
           </div>
+          <motion.div
+            className="hero-floating-chip"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            ⚡ AI-powered dashboards, live tracking & verified professionals in a single tap.
+          </motion.div>
           <div className="hero-stats">
             {heroStats.map((stat) => (
               <motion.div
@@ -162,6 +178,7 @@ const JBConX = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.4 }}
+                whileHover={{ y: -6 }}
               >
                 <strong>{stat.value}</strong>
                 <span>{stat.label}</span>
@@ -218,6 +235,7 @@ const JBConX = () => {
               {...fadeUp}
               transition={{ delay: index * 0.05 }}
               className="service-card"
+                whileHover={{ y: -8, scale: 1.015 }}
             >
               <div className="service-icon">{service.icon}</div>
               <h3>{service.title}</h3>
@@ -279,6 +297,7 @@ const JBConX = () => {
               target={channel.href?.startsWith("http") ? "_blank" : undefined}
               rel={channel.href?.startsWith("http") ? "noreferrer" : undefined}
               className="contact-card"
+              whileHover={{ y: -6, boxShadow: "0 25px 60px rgba(9,18,40,0.18)" }}
             >
               <div className="contact-icon">{channel.icon}</div>
               <div>
