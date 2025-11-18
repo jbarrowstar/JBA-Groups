@@ -200,6 +200,10 @@
   margin-bottom: 2.5rem;
 }
 
+.arrow-child .section-header {
+  text-align: left;
+}
+
 .section-header h2 {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
 }

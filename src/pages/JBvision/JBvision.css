@@ -273,6 +273,11 @@
   margin-bottom: 2.5rem;
 }
 
+.jbvision .section-header {
+  text-align: left;
+  margin-left: 0;
+}
+
 .section-header h2 {
   font-size: clamp(2rem, 3.4vw, 2.8rem);
   margin-bottom: 0.8rem;

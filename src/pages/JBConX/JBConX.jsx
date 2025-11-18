@@ -129,184 +129,194 @@ const fadeUp = {
 const JBConX = () => {
   return (
     <div className="jbconx-page">
-      <section className="jbconx-hero">
-        <div className="hero-overlay" />
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.img
-            src={heroLogo}
-            alt="JBConX logo"
-            className="hero-logo"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          />
-          <span className="hero-pill">JBConX Pvt Ltd • Digital Construction Suite</span>
-          <h1>
-            Click, Connect, Construct.
-            <span>Building intelligence for every site.</span>
-          </h1>
-          <p>
-            JBConX is the comprehensive platform that converges construction services, professional hiring,
-            AI-driven dashboards, and live tracking so teams can deliver with speed and certainty.
-          </p>
-          <div className="hero-ctas">
-            <a className="primary-btn" href="#services">
-              Explore Services
-            </a>
-            <a className="ghost-btn" href="#contact">
-              Book a Demo
-            </a>
-          </div>
-          <motion.div
-            className="hero-floating-chip"
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            ⚡ AI-powered dashboards, live tracking & verified professionals in a single tap.
-          </motion.div>
-          <div className="hero-stats">
-            {heroStats.map((stat) => (
-              <motion.div
-                key={stat.label}
-                className="hero-stat"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4 }}
-                whileHover={{ y: -6 }}
-              >
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      <section className="jbconx-about">
-        <div className="section-header">
-          <p className="eyebrow">About JBConX</p>
-          <h2>Reimagining construction through digital innovation</h2>
-          <p>
-            JBConX removes friction from the entire construction lifecycle. We connect property owners,
-            government departments, project managers, and field teams on one secure stack backed by AI.
-          </p>
-        </div>
-        <div className="about-grid">
-          <motion.div {...fadeUp} className="mission-card">
-            <h3>Mission</h3>
-            <p>
-              Through our digital platform, we create sustainable employment and accelerate development by
-              giving every stakeholder— from rural craftsmen to urban engineers— a verified identity and a
-              transparent workflow.
-            </p>
-            <ul>
-              <li>Home services, team management, and AI in one place</li>
-              <li>Lightning-fast coordination with secure records</li>
-              <li>Opportunities that span metros, towns, and villages</li>
-            </ul>
-          </motion.div>
-          <motion.div {...fadeUp} transition={{ delay: 0.1 }} className="chips-card">
-            {capabilityHighlights.map((item) => (
-              <div key={item.title} className="chip">
-                <strong>{item.title}</strong>
-                <p>{item.detail}</p>
+        <section className="jbconx-hero">
+          <div className="hero-overlay" />
+          <div className="jbconx-container">
+            <motion.div
+              className="hero-content"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.img
+                src={heroLogo}
+                alt="JBConX logo"
+                className="hero-logo"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              />
+              <span className="hero-pill">JBConX Pvt Ltd • Digital Construction Suite</span>
+              <h1>
+                Click, Connect, Construct.
+                <span>Building intelligence for every site.</span>
+              </h1>
+              <p>
+                JBConX is the comprehensive platform that converges construction services, professional hiring,
+                AI-driven dashboards, and live tracking so teams can deliver with speed and certainty.
+              </p>
+              <div className="hero-ctas">
+                <a className="primary-btn" href="#services">
+                  Explore Services
+                </a>
+                <a className="ghost-btn" href="#contact">
+                  Book a Demo
+                </a>
               </div>
-            ))}
-          </motion.div>
+              <motion.div
+                className="hero-floating-chip"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              >
+                ⚡ AI-powered dashboards, live tracking & verified professionals in a single tap.
+              </motion.div>
+              <div className="hero-stats">
+                {heroStats.map((stat) => (
+                  <motion.div
+                    key={stat.label}
+                    className="hero-stat"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.4 }}
+                    whileHover={{ y: -6 }}
+                  >
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="jbconx-about">
+        <div className="jbconx-container">
+          <div className="section-header">
+            <p className="eyebrow">About JBConX</p>
+            <h2>Reimagining construction through digital innovation</h2>
+            <p>
+              JBConX removes friction from the entire construction lifecycle. We connect property owners,
+              government departments, project managers, and field teams on one secure stack backed by AI.
+            </p>
+          </div>
+          <div className="about-grid">
+            <motion.div {...fadeUp} className="mission-card">
+              <h3>Mission</h3>
+              <p>
+                Through our digital platform, we create sustainable employment and accelerate development by
+                giving every stakeholder— from rural craftsmen to urban engineers— a verified identity and a
+                transparent workflow.
+              </p>
+              <ul>
+                <li>Home services, team management, and AI in one place</li>
+                <li>Lightning-fast coordination with secure records</li>
+                <li>Opportunities that span metros, towns, and villages</li>
+              </ul>
+            </motion.div>
+            <motion.div {...fadeUp} transition={{ delay: 0.1 }} className="chips-card">
+              {capabilityHighlights.map((item) => (
+                <div key={item.title} className="chip">
+                  <strong>{item.title}</strong>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
 
       <section id="services" className="jbconx-services">
-        <div className="section-header">
-          <p className="eyebrow">What we deliver</p>
-          <h2>Core services powered by JBConX</h2>
-          <p>Every workflow your project needs, wrapped in AI-enabled transparency.</p>
-        </div>
-        <div className="service-grid">
-          {serviceCards.map((service, index) => (
-            <motion.div
-              key={service.title}
-              {...fadeUp}
-              transition={{ delay: index * 0.05 }}
-              className="service-card"
+        <div className="jbconx-container">
+          <div className="section-header">
+            <p className="eyebrow">What we deliver</p>
+            <h2>Core services powered by JBConX</h2>
+            <p>Every workflow your project needs, wrapped in AI-enabled transparency.</p>
+          </div>
+          <div className="service-grid">
+            {serviceCards.map((service, index) => (
+              <motion.div
+                key={service.title}
+                {...fadeUp}
+                transition={{ delay: index * 0.05 }}
+                className="service-card"
                 whileHover={{ y: -8, scale: 1.015 }}
-            >
-              <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.copy}</p>
-              <div className="service-tags">
-                {service.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+              >
+                <div className="service-icon">{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p>{service.copy}</p>
+                <div className="service-tags">
+                  {service.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="jbconx-app">
-        <div className="app-card">
-          <motion.div {...fadeUp}>
-            <p className="eyebrow">Always-on platform</p>
-            <h2>Access JBConX anywhere</h2>
-            <p>
-              Monitor dashboards, assign manpower, approve budgets, and chat with site teams using the JBConX
-              mobile experience.
-            </p>
-            <ul>
-              <li>Real-time tracking & status alerts</li>
-              <li>Secure wallet & digital agreements</li>
-              <li>JBConX Pro for professionals on the go</li>
-            </ul>
-            <div className="download-row">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.jbconx"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGooglePlay />
-                Google Play
-              </a>
-              <a href="https://apps.apple.com" target="_blank" rel="noreferrer">
-                <FaApple />
-                App Store
-              </a>
-            </div>
-          </motion.div>
+        <div className="jbconx-container">
+          <div className="app-card">
+            <motion.div {...fadeUp}>
+              <p className="eyebrow">Always-on platform</p>
+              <h2>Access JBConX anywhere</h2>
+              <p>
+                Monitor dashboards, assign manpower, approve budgets, and chat with site teams using the JBConX
+                mobile experience.
+              </p>
+              <ul>
+                <li>Real-time tracking & status alerts</li>
+                <li>Secure wallet & digital agreements</li>
+                <li>JBConX Pro for professionals on the go</li>
+              </ul>
+              <div className="download-row">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.jbconx"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaGooglePlay />
+                  Google Play
+                </a>
+                <a href="https://apps.apple.com" target="_blank" rel="noreferrer">
+                  <FaApple />
+                  App Store
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       <section id="contact" className="jbconx-contact">
-        <div className="section-header">
-          <p className="eyebrow">Connect</p>
-          <h2>Ready to transform your next project?</h2>
-          <p>Reach out for deployments, demos, or regional partnerships.</p>
-        </div>
-        <div className="contact-grid">
-          {contactChannels.map((channel) => (
-            <motion.a
-              key={channel.label}
-              {...fadeUp}
-              href={channel.href}
-              target={channel.href?.startsWith("http") ? "_blank" : undefined}
-              rel={channel.href?.startsWith("http") ? "noreferrer" : undefined}
-              className="contact-card"
-              whileHover={{ y: -6, boxShadow: "0 25px 60px rgba(9,18,40,0.18)" }}
-            >
-              <div className="contact-icon">{channel.icon}</div>
-              <div>
-                <h4>{channel.label}</h4>
-                <p>{channel.value}</p>
-                <span>{channel.note}</span>
-              </div>
-            </motion.a>
-          ))}
+        <div className="jbconx-container">
+          <div className="section-header">
+            <p className="eyebrow">Connect</p>
+            <h2>Ready to transform your next project?</h2>
+            <p>Reach out for deployments, demos, or regional partnerships.</p>
+          </div>
+          <div className="contact-grid">
+            {contactChannels.map((channel) => (
+              <motion.a
+                key={channel.label}
+                {...fadeUp}
+                href={channel.href}
+                target={channel.href?.startsWith("http") ? "_blank" : undefined}
+                rel={channel.href?.startsWith("http") ? "noreferrer" : undefined}
+                className="contact-card"
+                whileHover={{ y: -6, boxShadow: "0 25px 60px rgba(9,18,40,0.18)" }}
+              >
+                <div className="contact-icon">{channel.icon}</div>
+                <div>
+                  <h4>{channel.label}</h4>
+                  <p>{channel.value}</p>
+                  <span>{channel.note}</span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </section>
     </div>
