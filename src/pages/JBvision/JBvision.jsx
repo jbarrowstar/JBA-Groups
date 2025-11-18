@@ -1,180 +1,439 @@
-import React, { useState, useEffect } from 'react';
-import './JBvision.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { FaWhatsapp, FaArrowUp } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaPhoneAlt,
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaClock,
+  FaShieldAlt,
+  FaLeaf,
+  FaHome,
+  FaRupeeSign,
+  FaUniversity,
+  FaClinicMedical,
+  FaShoppingBag,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
+import "./JBvision.css";
 
-const JBVision2025 = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+const heroContacts = [
+  {
+    label: "Sales Desk",
+    value: "+91 7204 256 555",
+    href: "tel:+917204256555",
+    icon: <FaPhoneAlt />,
+  },
+  {
+    label: "WhatsApp",
+    value: "+91 9632 704 999",
+    href: "https://wa.me/919632704999",
+    icon: <FaWhatsapp />,
+  },
+];
 
-  const [showScrollTop, setShowScrollTop] = useState(false);
+const pillars = [
+  {
+    title: "House for Everyone",
+    copy:
+      "Community-centered planning that serves first-time buyers, growing families, and retirees with inclusive layouts and amenities.",
+    icon: <FaHome />,
+  },
+  {
+    title: "Competitive Pricing",
+    copy:
+      "Premium villas and plots priced for accessibility without compromising on architecture, infrastructure, or comfort.",
+    icon: <FaRupeeSign />,
+  },
+  {
+    title: "Long-Term Investment",
+    copy:
+      "Prime locations, curated amenities, and assured appreciation make every JB Vision purchase a future-forward asset.",
+    icon: <FaShieldAlt />,
+  },
+];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 200);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+const projectSpecs = [
+  { label: "Plot sizes", value: "1200 – 2400 sq ft" },
+  { label: "Rooms", value: "2 – 5" },
+  { label: "Bathrooms", value: "2 – 4" },
+  { label: "Parking", value: "Private garage" },
+];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+const listings = [
+  {
+    name: "JB Vision — Luxury Villa Plots",
+    price: "₹ 3,999 / Sqft",
+    location:
+      "Site No.121, Hoskote–Malur Road, Behind Morarji Desai PU College, Jadigenahalli",
+  },
+  {
+    name: "Sri Sai Brindavan Avenue — Premium Plots",
+    price: "₹ 3,600 / Sqft",
+    location: "Thirumanahalli, Baiyappanahalli",
+  },
+  {
+    name: "Sri Sai Brindavan Avenue — Independent Homes",
+    price: "₹ 3,999 – 3,599 / Sqft",
+    location: "Mandur & Surrounding Neighborhoods",
+  },
+];
 
+const accessibility = [
+  {
+    title: "Schools & Colleges",
+    icon: <FaUniversity />,
+    items: [
+      "Polaris International School",
+      "United World Academy",
+      "Narayana e-Techno, Whitefield",
+      "VIBGYOR High, Kadugodi",
+      "Pinnacle International School",
+    ],
+  },
+  {
+    title: "Healthcare",
+    icon: <FaClinicMedical />,
+    items: [
+      "MVJ Hospital",
+      "OVUM Hospitals",
+      "Woman & Child Speciality",
+      "Siliconcity Hospitals",
+      "Sathya Sai Orthopaedic",
+    ],
+  },
+  {
+    title: "IT Parks & Retail",
+    icon: <FaShoppingBag />,
+    items: [
+      "Orion Uptown Mall",
+      "Phoenix Marketcity",
+      "VR Bengaluru",
+      "Nexus Shantiniketan",
+      "Narsapura Industrial Area",
+    ],
+  },
+];
+
+const socialLinks = [
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61566905600948", icon: <FaFacebookF /> },
+  { label: "Instagram", href: "https://www.instagram.com/jbvisionplots/", icon: <FaInstagram /> },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/jb-vision-luxury-villa-plots/", icon: <FaLinkedinIn /> },
+  { label: "X", href: "https://x.com/JBGroupsVision", icon: <FaTwitter /> },
+];
+
+const officeDetails = [
+  {
+    label: "Experience Centre",
+    value:
+      "Flat 107, Uthunga Residency, Bangalore–Tripathi HWY, Near Hoskote Toll Plaza, Bangalore 562114",
+    icon: <FaMapMarkerAlt />,
+  },
+  {
+    label: "Call Us",
+    value: "+91 7204 256 555 • +91 9663 332 139",
+    icon: <FaPhoneAlt />,
+  },
+  {
+    label: "Timings",
+    value: "Mon – Sun: 09:00 AM – 06:00 PM • Tuesday: Closed",
+    icon: <FaClock />,
+  },
+];
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+};
+
+const JBvision = () => {
   return (
-    <div className="jb-section">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <img
-          src="https://images.unsplash.com/photo-1568605114967-8130f3a36994"
-          alt="Hero Background"
-          className="hero-background"
-        />
-        <div className="hero-overlay">
-          <h1>JB Vision 2025</h1>
-          <p>Building the Future of Modern Living</p>
-          <div className="hero-buttons">
-            <button className="btn-primary">Explore Projects</button>
-            <button className="btn-secondary">Contact Us</button>
-          </div>
-        </div>
-      </section>
-
-      {/* JB Vision Phase 1 Section */}
-      <section className="phase-section" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')" }}>
-        <div className="phase-overlay">
-          <h2>JB Vision - Phase 1</h2>
-          <p>
-            Phase 1 of JB Vision began with a bold goal: redefine affordable luxury. Featuring 2BHK and 3BHK residential apartments
-            with top-tier amenities like rooftop gardens, gymnasiums, children’s play areas, and 24/7 security.
-          </p>
-        </div>
-      </section>
-
-      {/* JB Vision Phase 2 Section */}
-      <section className="phase-section" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154084-7c1a00ae1744')" }}>
-        <div className="phase-overlay">
-          <h2>JB Vision - Phase 2</h2>
-          <p>
-            A mixed-use community development featuring smart homes, commercial outlets, landscaped parks, and solar power. Focused
-            on sustainable and smart living solutions.
-          </p>
-        </div>
-      </section>
-
-      {/* Transparent Highlight Section */}
-      <section className="transparent-section" data-aos="fade-up">
-        <div className="transparent-content">
-          <h2>Our Promise</h2>
-          <p>
-            We are committed to delivering excellence with integrity, innovation, and quality. Every brick laid reflects our vision of creating future-ready, sustainable communities.
-          </p>
-        </div>
-      </section>
-
-      {/* Amenities Section */}
-      <section className="amenities-section" data-aos="fade-up">
-        <h2>Amenities</h2>
-        <div className="amenities-slider">
-          <div className="amenity-card">Swimming Pool</div>
-          <div className="amenity-card">Club House</div>
-          <div className="amenity-card">Gym & Yoga Hall</div>
-          <div className="amenity-card">24x7 Security</div>
-          <div className="amenity-card">Rainwater Harvesting</div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="about-section" data-aos="fade-up">
-        <div className="about-content">
-          <div className="about-images">
-            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" alt="build" />
-            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="build" />
-          </div>
-          <div className="about-text">
-            <h2>About JB Vision</h2>
-            <p>
-              JB Vision is a premier construction initiative focused on crafting modern, sustainable, and functional living
-              environments. With a commitment to excellence, we blend architectural brilliance with innovation and technology.
+    <div className="jbvision">
+      <section className="jbvision-hero">
+        <div className="hero-overlay-gradient" />
+        <div className="jbvision-container hero-grid">
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.6 }}
+            className="hero-copy"
+          >
+            <p className="eyebrow">Child Brand Spotlight</p>
+            <h1>
+              JB Vision
+              <span>Luxury Plots &amp; Villas in East Bengaluru</span>
+            </h1>
+            <p className="hero-lead">
+              Reimagining gated community living along the Hoskote growth
+              corridor with landscaped enclaves, smart infrastructure, and
+              inclusive pricing curated for every family journey.
             </p>
-            <button className="download-btn">Download Brochure</button>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      <section className="gallery-section" data-aos="fade-up">
-        <h2 className="gallery-title">Lifestyle Gallery</h2>
-        <div className="gallery-content">
-          <div className="gallery-description">
-            <p>
-              Explore the essence of refined living through our visual tour. Our gallery reflects the serene beauty,
-              modern design, and vibrant community life within JB Vision.
-            </p>
-          </div>
-          <div className="gallery-video">
-            <div className="video-container">
-              <img src="https://images.unsplash.com/photo-1600585154084-7c1a00ae1744" alt="Gallery Thumb" className="video-thumb" />
-              <div className="video-overlay">
-                <p>Watch Video</p>
-                <span className="play-button">▶</span>
-              </div>
+            <div className="hero-badges">
+              <span>Gated Community</span>
+              <span>House for Everyone</span>
+              <span>24/7 Security</span>
             </div>
+            <div className="hero-contacts">
+              {heroContacts.map((contact) => (
+                <a
+                  key={contact.value}
+                  href={contact.href}
+                  className="hero-chip"
+                  target={contact.href.startsWith("http") ? "_blank" : "_self"}
+                  rel="noreferrer"
+                >
+                  {contact.icon}
+                  <div>
+                    <small>{contact.label}</small>
+                    <strong>{contact.value}</strong>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="hero-sidecard"
+          >
+            <p className="eyebrow">Why JB Vision</p>
+            <h3>Trusted real-estate craft since 2007.</h3>
+            <p>
+              JB Groups fuses premium plotting with lifestyle infrastructure,
+              making every square foot deliver comfort, connectivity, and
+              capital appreciation.
+            </p>
+            <ul>
+              <li>Curated villa plots with modern civic upgrades</li>
+              <li>Inclusive amenities: pool, club, fitness, play zones</li>
+              <li>Proximity to Whitefield, ORR, and Narsapura hubs</li>
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="jbvision-vision">
+        <div className="jbvision-container vision-grid">
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.5 }}
+            className="vision-card"
+          >
+            <h2>Our Vision</h2>
+            <p>
+              At JB Vision we cultivate thriving neighborhoods where design,
+              sustainability, and connection shape everyday living. Every plot
+              or villa balances comfort with accessibility so buyers across life
+              stages can plant roots with confidence.
+            </p>
+            <p>
+              From first-time homeowners to retirement seekers, our masterplans
+              uplift the quality of life with thoughtful layouts, steady
+              infrastructure, and lush, well-managed commons.
+            </p>
+          </motion.div>
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="vision-pillars"
+          >
+            {pillars.map((pillar) => (
+              <div key={pillar.title} className="pillar-card">
+                <div className="pillar-icon">{pillar.icon}</div>
+                <div>
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.copy}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="jbvision-featured">
+        <div className="jbvision-container">
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.5 }}
+            className="section-header"
+          >
+            <p className="eyebrow">Featured Property</p>
+            <h2>JB Vision — Gated Community Living</h2>
+            <p>
+              Secure, landscaped precinct spread across Jadigenahalli with
+              state-of-the-art amenities, on-ground supervision, and quick
+              access to Bengaluru&apos;s most connected corridors.
+            </p>
+          </motion.div>
+
+          <div className="featured-grid">
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="featured-card"
+            >
+              <h3>Location &amp; Access</h3>
+              <p>
+                Site No.121, Hoskote Malur Road, behind Morarji Desai PU College,
+                Jadigenahalli, Bengaluru – 562114.
+              </p>
+              <div className="feature-list">
+                <div>
+                  <FaMapMarkerAlt /> <span>8 min to Hoskote Toll</span>
+                </div>
+                <div>
+                  <FaLeaf /> <span>Landscaped parks &amp; trails</span>
+                </div>
+                <div>
+                  <FaShieldAlt /> <span>24/7 security &amp; surveillance</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="featured-card specs-card"
+            >
+              <h3>Project Details</h3>
+              <div className="spec-grid">
+                {projectSpecs.map((spec) => (
+                  <div key={spec.label}>
+                    <span>{spec.label}</span>
+                    <strong>{spec.value}</strong>
+                  </div>
+                ))}
+              </div>
+              <a
+                className="primary-link"
+                href="https://jbvgroups.com/contact-us/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Get Quote Now
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="choose-section" data-aos="fade-up">
-        <h2>Why Choose JB Vision?</h2>
-        <div className="choose-cards">
-          <div className="choose-card">Timely Delivery</div>
-          <div className="choose-card">Transparent Pricing</div>
-          <div className="choose-card">Top-Quality Materials</div>
-          <div className="choose-card">Excellent Connectivity</div>
+      <section className="jbvision-listings">
+        <div className="jbvision-container">
+          <div className="section-header">
+            <p className="eyebrow">The Property</p>
+            <h2>Featured Listings</h2>
+          </div>
+          <div className="listing-grid">
+            {listings.map((listing, index) => (
+              <motion.div
+                key={listing.name}
+                {...fadeUp}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="listing-card"
+              >
+                <h3>{listing.name}</h3>
+                <p className="price">{listing.price}</p>
+                <p className="location">
+                  <FaMapMarkerAlt /> {listing.location}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Milestones Section */}
-      <section className="milestones-section" data-aos="fade-up">
-        <h2>Project Milestones</h2>
-        <ul className="milestone-list">
-          <li>✔️ Phase 1 - 100+ Flats Sold</li>
-          <li>✔️ Phase 2 - Smart Commercial Launch</li>
-          <li>✔️ 90% Work Completed on Club House</li>
-        </ul>
-      </section>
-
-      {/* How We Work */}
-      <section className="workflow-section" data-aos="fade-up">
-        <h2>How We Work</h2>
-        <div className="workflow-steps">
-          <div className="step">1. Planning & Design</div>
-          <div className="step">2. Approvals & Budgeting</div>
-          <div className="step">3. Construction Phase</div>
-          <div className="step">4. Handover & Maintenance</div>
+      <section className="jbvision-benefits">
+        <div className="jbvision-container">
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.4 }}
+            className="benefits-copy"
+          >
+            <p className="eyebrow">Our Benefits</p>
+            <h2>Life inside JB Vision</h2>
+            <p>
+              Residents enjoy a sparkling pool, clubhouse fitness center,
+              children&apos;s play courts, and scenic walking trails that wind
+              through manicured green pockets. Regular community events foster
+              a friendly, close-knit neighborhood vibe.
+            </p>
+          </motion.div>
+          <div className="access-grid">
+            {accessibility.map((bucket, index) => (
+              <motion.div
+                key={bucket.title}
+                {...fadeUp}
+                transition={{ duration: 0.4, delay: 0.1 * index }}
+                className="access-card"
+              >
+                <div className="access-icon">{bucket.icon}</div>
+                <h3>{bucket.title}</h3>
+                <ul>
+                  {bucket.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* WhatsApp & Scroll to Top */}
-      <a
-        href="https://wa.me/919000000000"
-        className="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaWhatsapp size={24} />
-      </a>
-
-      {showScrollTop && (
-        <button className="scroll-top-btn" onClick={scrollToTop}>
-          <FaArrowUp />
-        </button>
-      )}
+      <section className="jbvision-cta">
+        <div className="jbvision-container cta-grid">
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.4 }}
+            className="cta-card"
+          >
+            <p className="eyebrow">Connect with JB Vision</p>
+            <h2>Book a site visit or request the latest availability.</h2>
+            <p>
+              Share your requirement and the JB Vision desk will coordinate a
+              guided walkthrough, pricing details, and documentation support.
+            </p>
+            <div className="contact-list">
+              {officeDetails.map((detail) => (
+                <div key={detail.label} className="contact-row">
+                  <span>{detail.icon}</span>
+                  <div>
+                    <strong>{detail.label}</strong>
+                    <p>{detail.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="cta-social"
+          >
+            <h3>Follow us</h3>
+            <p>
+              Real-time launch updates, development milestones, and community
+              stories from the site.
+            </p>
+            <div className="social-row">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };
 
-export default JBVision2025;
+export default JBvision;
