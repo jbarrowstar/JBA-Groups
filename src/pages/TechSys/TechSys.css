@@ -12,6 +12,11 @@
   overflow: hidden;
 }
 
+.techsys-container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+
 .techsys-hero::before,
 .techsys-hero::after {
   content: "";
@@ -149,6 +154,12 @@
   text-align: center;
   max-width: 760px;
   margin: 0 auto 2rem;
+}
+
+.techsys-services .section-header,
+.techsys-why .section-header {
+  text-align: left;
+  margin: 0 0 2rem 0;
 }
 
 .section-header h2 {
